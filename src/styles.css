@@ -1,0 +1,14 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  border-bottom: 1px solid grey;
+  padding-bottom: 6px;
+  cursor: pointer;
+}
