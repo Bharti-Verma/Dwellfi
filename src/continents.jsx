@@ -33,8 +33,34 @@ export default function ContinentList() {
     return <p>{error ? error.message : "Loading..."}</p>;
   }
 
+  const handleContinentSelect=(e)=>{
+
+    const findData = data.continents.find(continent=>{
+       return continent.name
+    })
+
+     console.log(findData.name, '====', e.target.value)
+
+  }
+
   return (
     <>
+
+        <section>
+          <div className="container">
+            <div className="row justify-content-center">
+              <div className="col-5 mt-3 pt-3 mb-3">
+                  <Form.Select onChange={(e)=>handleContinentSelect(e)}>
+                  <option>Select Continent</option>
+                    {data.continents.map((continent, index) => {
+                        return (
+                          <option key={index} value={continent.name}>{continent.name}</option>
+                        )})}
+                  </Form.Select>
+              </div>
+            </div>
+          </div>
+        </section>
       <Accordion defaultActiveKey="0">
         {data.continents.map((continent, index) => {
           return (
